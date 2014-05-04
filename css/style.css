@@ -1,0 +1,80 @@
+@font-face
+{
+    font-family: fancyFont;
+    src: url(../lib/fonts/regular.otf);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.viewport-container {
+    background-color: #c0392b;
+    height: 800px;
+    width: 100%;
+    margin: 0;
+}
+
+.menu {
+    height: 80px;
+    width: 100%;
+    overflow: hidden;
+    margin: auto;
+    font-family: fancyFont;
+    font-size: 2em;
+    position: fixed;
+    display: block;
+    -moz-box-shadow: 0px 1px 4px rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: 0px 1px 4px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 1px 4px rgba(255, 255, 255, 0.3);
+}
+
+.menu li {
+    line-height: 80px;
+    height: 80px;
+    list-style: none;
+    float: left;
+    padding-left: 30px;
+    padding-right: 30px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+}
+
+.logo {
+    display: inline-block;
+    float: left;
+    width: 35%;
+    height: 100%;
+    text-indent: -9999px;
+}
+
+.slide-1 {
+    position: relative;
+    color: white;
+    font-family: fancyFont;
+    text-align: center;
+}
+
+.name-container {
+/*    vertical-align: bottom;*/
+    width: 100%;
+    position: absolute;
+    vertical-align: middle;
+}
+
+.name-container h1 {
+/*    vertical-align: bottom;*/
+    font-size: 10em;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+/*    margin-top: 40%;*/
+    margin-bottom: 0;
+}
+
+.name-container h2 {
+/*    vertical-align: bottom;*/
+    margin-top: 20px;
+}

@@ -64,6 +64,7 @@ html, body {
     width: 100%;
     position: absolute;
     vertical-align: middle;
+    text-align: center;
 }
 
 .name-container h1 {
@@ -77,4 +78,29 @@ html, body {
 .name-container h2 {
 /*    vertical-align: bottom;*/
     margin-top: 20px;
+}
+
+.triangle {
+    position: relative;
+    width: 0;
+    height: 0;
+    left: 45%;
+    bottom: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 50px solid white;
+    margin-top: 10px;
+}
+
+.rectangle:first-of-type {
+    margin-top: 150px;
+}
+
+.rectangle {
+    position: relative;
+    background-color: white;
+    left: 47%;
+    width: 50px;
+    height: 10px;
+    margin-bottom: 10px;
 }

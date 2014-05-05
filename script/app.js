@@ -13,11 +13,13 @@ $(document).ready(function(){
 
 	//Window setting
 	var height = $(window).height() - 80;
+	var width = $(window).width();
 	$(".slide-1").css("height", (height));
 	$(".viewport-container").css("height", ($(document).height()));
 
 	//first page
-	// $(".name-container").css("line-height", (height * 0.6 + "px"));
+	$(".rectangle").css("left", ((1 - 50/width) * 50 + "%"));
+	$(".triangle").css("left", ((1 - 100/width) * 50 + "%"));
 
   	$(".logo").click(function() {
   		console.log("height is " + height);

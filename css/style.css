@@ -7,11 +7,11 @@
 html, body {
   margin: 0;
   padding: 0;
+  font-family: fancyFont;
 }
 
 .viewport-container {
     background-color: #c0392b;
-    height: 800px;
     width: 100%;
     margin: 0;
 }
@@ -21,13 +21,14 @@ html, body {
     width: 100%;
     overflow: hidden;
     margin: auto;
-    font-family: fancyFont;
     font-size: 2em;
     position: fixed;
     display: block;
-    -moz-box-shadow: 0px 1px 4px rgba(255, 255, 255, 0.3);
-    -webkit-box-shadow: 0px 1px 4px rgba(255, 255, 255, 0.3);
-    box-shadow: 0px 1px 4px rgba(255, 255, 255, 0.3);
+    color: white;
+    z-index: 9999;
+    -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .menu li {
@@ -35,61 +36,65 @@ html, body {
     height: 80px;
     list-style: none;
     float: left;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 1em;
+    padding-right: 1em;
     vertical-align: middle;
     text-align: center;
-    cursor: pointer;
-    display: inline-block;
-    color: white;
 }
 
-.logo {
-    display: inline-block;
-    float: left;
-    width: 35%;
-    height: 100%;
-    text-indent: -9999px;
+.menu-wrapper {
+  position: fixed;
+  margin: 0 0 0 -12.5em;
+  left: 50%;
 }
 
 .slide-1 {
     position: relative;
     color: white;
-    font-family: fancyFont;
     text-align: center;
 }
 
 .name-container {
 /*    vertical-align: bottom;*/
-    width: 100%;
     position: absolute;
-    vertical-align: middle;
-    text-align: center;
+/*    vertical-align: middle;
+    text-align: center;*/
+    height: 15em;
+    width: 100%;
+    margin: -7.5em 0 0 -50%;
+    left: 50%;
+    top: 40%;
 }
 
 .name-container h1 {
 /*    vertical-align: bottom;*/
     font-size: 10em;
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
-/*    margin-top: 40%;*/
+    margin: 0;
     margin-bottom: 0;
 }
 
 .name-container h2 {
 /*    vertical-align: bottom;*/
-    margin-top: 20px;
+    margin: 1em 0 0 0;
+}
+
+.scroll-container {
+  width: 40px;
+  height: 55px;
+  position: absolute;
+  margin: -27.5px 0 0 -20px;
+  left: 50%;
+  bottom: 5px;
 }
 
 .triangle {
-    position: absolute;
     width: 0;
     height: 0;
-    left: 45%;
     bottom: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 50px solid white;
-    margin-top: 10px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid white;
 }
 
 /*.rectangle:first-of-type {
@@ -97,11 +102,9 @@ html, body {
 }*/
 
 .rectangle {
-    position: absolute;
     background-color: white;
     bottom: 50;
-    left: 47%;
-    width: 50px;
-    height: 10px;
-    margin-bottom: 10px;
+    width: 20px;
+    height: 7px;
+    margin: 0 0 5px 10px;
 }

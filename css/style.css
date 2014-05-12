@@ -55,10 +55,7 @@ html, body {
 }
 
 .name-container {
-/*    vertical-align: bottom;*/
     position: absolute;
-/*    vertical-align: middle;
-    text-align: center;*/
     height: 15em;
     width: 100%;
     margin: -7.5em 0 0 -50%;
@@ -67,7 +64,6 @@ html, body {
 }
 
 .name-container h1 {
-/*    vertical-align: bottom;*/
     font-size: 10em;
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
     margin: 0;
@@ -75,7 +71,6 @@ html, body {
 }
 
 .name-container h2 {
-/*    vertical-align: bottom;*/
     margin: 1em 0 0 0;
 }
 
@@ -97,14 +92,14 @@ html, body {
     border-top: 20px solid white;
 }
 
-/*.rectangle:first-of-type {
-    margin-top: 150px;
-}*/
-
 .rectangle {
     background-color: white;
     bottom: 50;
     width: 20px;
     height: 7px;
     margin: 0 0 5px 10px;
+}
+
+.slide-2 {
+  background-color: white;
 }

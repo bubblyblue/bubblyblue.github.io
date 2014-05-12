@@ -7,7 +7,6 @@
 //         }
 //     });
 // } )( jQuery );
-var s = skrollr.init();
 
 $(document).ready(function(){
 
@@ -21,6 +20,10 @@ $(document).ready(function(){
 		if (height < 500) {
 			$(".scroll-container").hide();
 		}
+
+		$(".menu").attr(("data-" + height), "background-color:rgba(192, 57, 43, 1); color: rgb(255, 255, 255);");
+		$(".menu").attr(("data-" + (height + 1)), "background-color:rgba(255, 255, 255, 0.9); color: rgb(150, 40, 27)");
+		var s = skrollr.init();
 	}
 
 

@@ -5,15 +5,15 @@
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  font-family: fancyFont;
+    margin: 0;
+    padding: 0;
+    font-family: fancyFont;
 }
 
 .viewport-container {
-    background-color: #c0392b;
     width: 100%;
     margin: 0;
+    background-color: #C0392B;
 }
 
 .menu {
@@ -43,9 +43,9 @@ html, body {
 }
 
 .menu-wrapper {
-  position: fixed;
-  margin: 0 0 0 -12.5em;
-  left: 50%;
+    position: fixed;
+    margin: 0 0 0 -12.5em;
+    left: 50%;
 }
 
 .slide-1 {
@@ -75,12 +75,12 @@ html, body {
 }
 
 .scroll-container {
-  width: 40px;
-  height: 55px;
-  position: absolute;
-  margin: -27.5px 0 0 -20px;
-  left: 50%;
-  bottom: 5px;
+    width: 40px;
+    height: 55px;
+    position: absolute;
+    margin: -27.5px 0 0 -20px;
+    left: 50%;
+    bottom: 5px;
 }
 
 .triangle {
@@ -101,5 +101,67 @@ html, body {
 }
 
 .slide-2 {
-  background-color: white;
+    position: relative;
+    background-color: white;
+    height: 600px;
+}
+
+.intro-container {
+    position: absolute;
+    color: #C0392B;
+    top: 50px;
+    bottom: 50px;
+    left: 10%;
+    right: 10%;
+}
+
+.intro-container > * {
+    float: left;
+}
+
+.detail-container {
+    margin-left: 5%;
+    width: 90%;
+    height: 100%;
+}
+
+.detail-container > * {
+    height: 155px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.detail-container > * > *{
+    float: left;
+}
+
+.my-info-title {
+    border-bottom: 5px solid #C0392B;
+    font-size: 8em;
+    height: 150px;
+    width: 40%;
+    text-align: center;
+}
+
+.my-info-content {
+    font-family: 'Lato', sans-serif;
+    width: 55%;
+    height: 155px;
+    border-left: 5px solid #C0392B;
+}
+
+.info-header {
+    height: 46.5px;
+    line-height: 46.5px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #C0392B;
+    color: white;
+    font-size: 2em;
+}
+
+.info-para {
+    margin: 15px 5% 0 5%;
+    height: 93.5px;
+    font-size: 1em;
 }

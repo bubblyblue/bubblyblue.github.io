@@ -13,7 +13,7 @@ html, body {
 .viewport-container {
     width: 100%;
     margin: 0;
-    background-color: #C0392B;
+    background-color: white;
 }
 
 .menu {
@@ -49,6 +49,7 @@ html, body {
 }
 
 .slide-1 {
+    background-color: #C0392B;
     position: relative;
     color: white;
     text-align: center;
@@ -108,7 +109,7 @@ html, body {
 
 .intro-container {
     position: absolute;
-    color: #C0392B;
+    color: #7F8C8D;
     top: 50px;
     bottom: 50px;
     left: 10%;
@@ -136,7 +137,7 @@ html, body {
 }
 
 .my-info-title {
-    border-bottom: 5px solid #C0392B;
+    border-bottom: 5px solid #7F8C8D;
     font-size: 8em;
     height: 150px;
     width: 40%;
@@ -147,7 +148,7 @@ html, body {
     font-family: 'Lato', sans-serif;
     width: 55%;
     height: 155px;
-    border-left: 5px solid #C0392B;
+    border-left: 5px solid #7F8C8D;
 }
 
 .info-header {
@@ -155,7 +156,7 @@ html, body {
     line-height: 46.5px;
     vertical-align: middle;
     text-align: center;
-    background-color: #C0392B;
+    background-color: #7F8C8D;
     color: white;
     font-size: 2em;
 }
@@ -164,4 +165,20 @@ html, body {
     margin: 15px 5% 0 5%;
     height: 93.5px;
     font-size: 1em;
+}
+
+.slide-3 {
+    background-color: white;
+}
+
+.image-container {
+    background-image: url("/img/Experience.png");
+    margin: 50px 0 50px 0;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    background-size: 100%;
+    background-position:center top;
+    height: 150px;
+    max-width:100%;
+    max-height:100%;
 }

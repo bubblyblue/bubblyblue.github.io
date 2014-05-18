@@ -10,6 +10,11 @@ html, body {
     font-family: fancyFont;
 }
 
+h4 {
+    margin: 0;
+    padding: 0;
+}
+
 .viewport-container {
     width: 100%;
     margin: 0;
@@ -49,7 +54,7 @@ html, body {
 }
 
 .slide-1 {
-    background-color: #C0392B;
+    background-color: #7F8C8D;
     position: relative;
     color: white;
     text-align: center;
@@ -104,14 +109,14 @@ html, body {
 .slide-2 {
     position: relative;
     background-color: white;
-    height: 600px;
+    height: 800px;
 }
 
 .intro-container {
     position: absolute;
-    color: #7F8C8D;
-    top: 50px;
-    bottom: 50px;
+    color: #303030;
+    top: 100px;
+    bottom: 100px;
     left: 10%;
     right: 10%;
 }
@@ -127,9 +132,9 @@ html, body {
 }
 
 .detail-container > * {
-    height: 155px;
+    height: 180px;
     width: 100%;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
 .detail-container > * > *{
@@ -137,7 +142,7 @@ html, body {
 }
 
 .my-info-title {
-    border-bottom: 5px solid #7F8C8D;
+    border-bottom: 5px solid #303030;
     font-size: 8em;
     height: 150px;
     width: 40%;
@@ -148,7 +153,7 @@ html, body {
     font-family: 'Lato', sans-serif;
     width: 55%;
     height: 155px;
-    border-left: 5px solid #7F8C8D;
+    border-left: 5px solid #303030;
 }
 
 .info-header {
@@ -156,7 +161,7 @@ html, body {
     line-height: 46.5px;
     vertical-align: middle;
     text-align: center;
-    background-color: #7F8C8D;
+    background-color: #303030;
     color: white;
     font-size: 2em;
 }
@@ -172,13 +177,70 @@ html, body {
 }
 
 .image-container {
+    border-top: 5px solid #303030;
+    border-bottom: 5px solid #303030;
+    width: 100%;
+}
+
+.experience-banner {
+    position: relative;
     background-image: url("/img/Experience.png");
-    margin: 50px 0 50px 0;
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
-    background-size: 100%;
     background-position:center top;
-    height: 150px;
+    width: 1000px;
+    height: 175px;
+    margin-left: -500px;
+    left:50%;
     max-width:100%;
     max-height:100%;
+}
+
+.all-experience-container {
+    font-family: 'Lato', sans-serif;
+    margin-top: 100px;
+    width: 100%;
+    height: 800px;
+}
+
+.experience-container {
+    width: 800px;
+    height: 225px;
+    position: relative;
+}
+
+.experience-container > * {
+    float: left;
+}
+
+.experience-icon {
+    height: 100%;
+    line-height: 225px;
+    width: 30%;
+    float: left;
+}
+
+.experience-icon > img {
+    height: 100%;
+    vertical-align: middle;
+}
+
+.experience-word {
+    margin: 0 5% 0 5%;
+    margin-top: 25px;
+    width: 60%;
+}
+
+.experience-header {
+    color: #1F3A93;
+}
+
+.hr-width {
+    width: 800px;
+}
+
+.experience-container-right {
+    right: 0;
+}
+
+.experience-container-right > *{
+    float: right;
 }

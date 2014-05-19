@@ -55,9 +55,10 @@ h4 {
 
 .slide-1 {
     background-color: #ffc000;
-    position: relative;
+    position: fixed;
     color: black;
     text-align: center;
+    z-index: 3;
 }
 
 .name-container {
@@ -108,15 +109,31 @@ h4 {
 
 .slide-2 {
     position: relative;
-    background-color: black;
-    height: 800px;
+    background-color: #303030;
+    height: 925px;
+    z-index: 5;
+}
+
+.about-me {
+    border-radius: 5px;
+    background-color: white;
+    color: #ffc000;
+    text-align: center;
+    font-size: 2.5em;
+    width: 30%;
+    line-height: 75px;
+    height: 75px;
+    position: absolute;
+    top: 75px;
+    left: 35%;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .intro-container {
     position: absolute;
     color: #ffc000;
-    top: 100px;
-    bottom: 100px;
+    top: 225px;
     left: 10%;
     right: 10%;
 }
@@ -153,7 +170,6 @@ h4 {
     font-family: 'Lato', sans-serif;
     width: 55%;
     height: 155px;
-    border-left: 5px solid #ffc000;
 }
 
 .info-header {
@@ -164,22 +180,29 @@ h4 {
     background-color: #ffc000;
     color: white;
     font-size: 2em;
+    border-radius: 5px 5px 5px 0;
 }
 
 .info-para {
+    border-left: 5px solid #ffc000;
     color: white;
-    margin: 15px 5% 0 5%;
+    padding: 15px 5% 0 5%;
     height: 93.5px;
     font-size: 1em;
 }
 
 .slide-3 {
+    position: relative;
     background-color: white;
+    z-index: 7;
+    height: 700px;
 }
 
 .image-container {
-/*    border-bottom: 5px solid #303030;*/
-    margin: 50px 0 50px 0;
+    position: relative;
+    background-color: white;
+    z-index: 7;
+    padding: 50px 0 50px 0;
     width: 100%;
 }
 
@@ -197,9 +220,8 @@ h4 {
 
 .all-experience-container {
     font-family: 'Lato', sans-serif;
-    margin-top: 100px;
     width: 100%;
-    height: 800px;
+    height: 700px;
 }
 
 .experience-container {
@@ -214,7 +236,7 @@ h4 {
 }
 
 .experience-icon {
-    height: 100%;
+    height: 90%;
     line-height: 225px;
     width: 30%;
     float: left;
@@ -237,6 +259,8 @@ h4 {
 
 .hr-width {
     width: 800px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .experience-container-right {
@@ -245,4 +269,64 @@ h4 {
 
 .experience-container-right > *{
     float: right;
+}
+
+.slide-4 {
+    position: relative;
+    z-index: 1;
+    background-color: #ffc000;
+    min-height: 450px;
+    font-family: 'Lato', sans-serif;
+}
+
+.crop-image {
+    height: 200px;
+    border-radius:50%;
+    margin-bottom: 10px;
+}
+
+.contact-header {
+/*    position: relative;*/
+    text-align: center;
+    vertical-align: middle;
+}
+
+.contact-me-text {
+    color: white;
+    font-size: 1.5em;
+}
+
+.my-icons {
+    margin-left: 40px;
+    margin-top: 40px;
+    height: 75px;
+    text-align: center;
+}
+
+.my-icons > * {
+    display: inline-block;
+    margin-right: 40px;
+    font-size: 3em;
+    color: black;
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    vertical-align: middle;
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+.my-icons > *:hover {
+    background-color: white;
+    color: #ffc000;
+}
+
+.fix-position {
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
 }

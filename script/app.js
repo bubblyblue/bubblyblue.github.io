@@ -1,12 +1,3 @@
-// ( function( $ ) {
-//     // Init Skrollr
-//     var s = skrollr.init({
-//         render: function(data) {
-//             //Debugging - Log the current scroll position.
-//             //console.log(data.curTop);
-//         }
-//     });
-// } )( jQuery );
 
 $(document).ready(function(){
 
@@ -16,10 +7,16 @@ $(document).ready(function(){
     var scrolled = false;
 
     var init = function() {
-        $(".slide-1").css("height", (height));
+        $(".slide-1").css("height", height);
+        $(".slide-1").css("width", width);
         if (height < 500) {
             $(".scroll-container").hide();
         }
+        //slide-1
+        $(".slide-1").attr(("data-" + (height + 400)), "opacity:1");
+        $(".slide-1").attr(("data-" + (height + 401)), "opacity:0");
+        //slide-2
+        $(".slide-2").css("margin-top", height+ "px");
         //menu scrolling setting
         $(".menu").attr(("data-" + height), "background-color:rgba(255, 192, 0, 1); color: rgb(0, 0, 0);");
         $(".menu").attr(("data-" + (height + 1)), "background-color:rgba(255, 255, 255, 0.9); color: rgb(48, 48, 48)");
@@ -30,7 +27,14 @@ $(document).ready(function(){
             $(expList[i]).attr("data--50-bottom", "left:" + ($(expList[i]).css("left")));
             $(expList[i]).attr("data--200-bottom", "left:" + (width - 800) / 2 + "px");
         }
-        // $(".experience-container").attr("data--400-bottom", "left:" + ());
+        //Slide-4
+        $(".slide-4").css("height", height);
+        $(".slide-4").css("width", width);
+        $(".fix-position").css("height", height);
+        $(".fix-position").css("width", width);
+        $(".contact-header").css("padding-top", (height * 0.3 - parseInt($(".contact-header").css("height"), 10) / 2) + "px");
+
+
 
         var s = skrollr.init();
     }

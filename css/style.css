@@ -54,9 +54,9 @@ h4 {
 }
 
 .slide-1 {
-    background-color: #7F8C8D;
+    background-color: #ffc000;
     position: relative;
-    color: white;
+    color: black;
     text-align: center;
 }
 
@@ -71,7 +71,7 @@ h4 {
 
 .name-container h1 {
     font-size: 10em;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
     margin: 0;
     margin-bottom: 0;
 }
@@ -108,13 +108,13 @@ h4 {
 
 .slide-2 {
     position: relative;
-    background-color: white;
+    background-color: black;
     height: 800px;
 }
 
 .intro-container {
     position: absolute;
-    color: #303030;
+    color: #ffc000;
     top: 100px;
     bottom: 100px;
     left: 10%;
@@ -142,7 +142,7 @@ h4 {
 }
 
 .my-info-title {
-    border-bottom: 5px solid #303030;
+    border-bottom: 5px solid #ffc000;
     font-size: 8em;
     height: 150px;
     width: 40%;
@@ -153,7 +153,7 @@ h4 {
     font-family: 'Lato', sans-serif;
     width: 55%;
     height: 155px;
-    border-left: 5px solid #303030;
+    border-left: 5px solid #ffc000;
 }
 
 .info-header {
@@ -161,12 +161,13 @@ h4 {
     line-height: 46.5px;
     vertical-align: middle;
     text-align: center;
-    background-color: #303030;
+    background-color: #ffc000;
     color: white;
     font-size: 2em;
 }
 
 .info-para {
+    color: white;
     margin: 15px 5% 0 5%;
     height: 93.5px;
     font-size: 1em;
@@ -177,8 +178,8 @@ h4 {
 }
 
 .image-container {
-    border-top: 5px solid #303030;
-    border-bottom: 5px solid #303030;
+/*    border-bottom: 5px solid #303030;*/
+    margin: 50px 0 50px 0;
     width: 100%;
 }
 
@@ -202,6 +203,7 @@ h4 {
 }
 
 .experience-container {
+    left: 0;
     width: 800px;
     height: 225px;
     position: relative;

@@ -2,7 +2,7 @@
 $(document).ready(function(){
 
     //Window setting
-    var height = $(window).height() - 80;
+    var height = $(window).height() - 60;
     var width = $(window).width();
     var s;
 
@@ -14,7 +14,7 @@ $(document).ready(function(){
     }
 
     var init = function() {
-        if(s) {
+        if(s){
             s.destroy();
         }
         $(".slide-1").css("height", height);
@@ -36,13 +36,14 @@ $(document).ready(function(){
         }
         var expList = $(".all-experience-container").find(".experience-container");
         for (var i = 0; i < expList.length; i++) {
-            console.log("container width is" + $(expList[i]).css("width"));
-            console.log("window width is" + width);
             if (width > 800){
-                $(expList[i]).attr("data--50-bottom", "left:" + ($(expList[i]).css("left")));
+                if (i % 2 == 0) {
+                    $(expList[i]).attr("data--50-bottom", "left: 0px");
+                } else {
+                    $(expList[i]).attr("data--50-bottom", "left:" + (width - 800) + "px");
+                }
                 $(expList[i]).attr("data--200-bottom", "left:" + (width - 800) / 2 + "px");
             } else {
-                console.log("width tooo short!");
                 $(expList[i]).removeAttr("data--50-bottom");
                 $(expList[i]).removeAttr("data--200-bottom");
                 $(expList[i]).removeAttr("class");
@@ -75,28 +76,23 @@ $(document).ready(function(){
         setTimeout(runAnima, 4000);
     }
 
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $(".slide-3").css("height", "900px");
+    }
+
     init();
     runAnima();
 
     $( window ).resize(function() {
         cleanAttr();
         width = $(window).width();
-        height = $(window).height() - 80;
+        height = $(window).height() - 60;
         if (height < 500) {
             $(".scroll-container").hide();
         } else {
             $(".scroll-container").show();
         }
-
-        // if (width < 1000) {
-        //     $(".experience-banner").css("background-size", "500px");
-        // } else {
-        //     $(".experience-banner").css("background-size", "1000px");
-        // }
         init();
     });
 
-    $(".logo").click(function() {
-        console.log("height is " + height);
-    })
 });

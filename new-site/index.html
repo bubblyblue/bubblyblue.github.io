@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eric Lin | My Personal Website</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+        <link rel="stylesheet/less" type="text/css" href="styles/main.less"/>
+    </head>
+    <body>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+          <ul class="right hide-on-med-and-down" style="margin-right: 60px">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#profile">PROFILE</a></li>
+            <li><a href="#gallery">GALLERY</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#profile">PROFILE</a></li>
+            <li><a href="#gallery">GALLERY</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="page-container">
+        <div class="slide-1" id="home">
+          <div id="main-backdrop"></div>
+          <div id="main-cover">
+            <div class="content-container main-wrapper center-align">
+                <h1 class="font-slim">ERIC ZIJING LIN</h1>
+                <hr/>
+                <h4 class="font-stick">A software engineering student from University of Waterloo</h4>
+            </div>
+          </div>
+        </div>
+        <div class="slide-2" id="profile">
+          <div class="slide-padding">
+            <div class="slide-header center-align">
+              <h2 class="font-slim">Profile</h2>
+              <p>"The measure of who we are is what we do with what we have." - Vince Lombardi</p>
+            </div>
+            <div class="row">
+              <div class="col s12 m5">
+                <div class="center-align">
+                  <img class="crop-image" src="images/eric-profile-square.jpg"/>
+                </div>
+                <div>
+                  <p>
+                    Hi there! My name is <b>Eric Lin</b>! I am a software developer based in <a href="https://www.google.ca/maps/place/University+of+Waterloo/@43.4749848,-80.5523327,14z">Waterloo, Ontario</a>. I love gaming, coding and dogs. Well, mostly dogs.
+                  </p>
+                </div>
+                <div>
+                  <div class="side-tabs">
+                    <div class="side-tab"><a href="#about-me" class="active" tab-index="0">About Me</a></div>
+                    <div class="side-tab"><a href="#gaming" tab-index="1">Gaming Proficiency</a></div>
+                    <div class="side-tab"><a href="#experience" tab-index="2">Past Experience</a></div>
+                    <div class="side-tab"><a href="#puppies" tab-index="3">Puppies</a></div>
+                    <div class="indicator-cover top"></div>
+                    <div class="vertical-indicator"></div>
+                    <div class="indicator-cover bottom"></div>
+                  </div>
+                </div>
+                <div class="material-tabs">
+                  <ul class="tabs z-depth-1">
+                      <li class="tab"><a href="#about-me" class="active" tab-index="0">About<span class="responsive-text"> Me</span></a></li>
+                      <li class="tab"><a href="#gaming" tab-index="1">Gaming<span class="responsive-text"> Proficiency</span></a></li>
+                      <li class="tab"><a href="#experience" tab-index="2"><span class="responsive-text">Past </span>Experience</a></li>
+                      <li class="tab"><a href="#puppies" tab-index="3">Puppies</a></li>
+                    </ul>
+                </div>
+              </div>
+              <div class="col s12 m7">
+                <div class="tabs-contents">
+                  <div class="panel fade active in" id="about-me">
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/eric-progress.png">
+                        <span class="card-title">Who am I</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I was born in japan, raised in China, studying in Canada and have done internship in the US. Yes, I have been everywhere. And that's probably why I love going to places. Life is a long journey, you can't ever stop exploring.</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/eric-back.png">
+                        <span class="card-title">What do I usually do</span>
+                      </div>
+                      <div class="card-content">
+                        <p>Hanging out with friends by playing board games or video games. So I game a lot and consider myself a nerd. Sometimes I would also spark an idea and start coding for it.</p>
+                      </div>
+                    </div>
+                    <div class="card" style="margin-bottom: 10px;">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/coding.png">
+                        <span class="card-title">How did I start coding</span>
+                      </div>
+                      <div class="card-content">
+                        <p>When I was a kid, I was a script kiddy and obsessed with "hacking". That was what got me started in programming. I tried to make games, desktop and web applications. Throughout years of learning, I have learned tons of programming concepts, languages and technologies. But I know there is still a long way to go, and I will never stop moving forward.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel fade" id="gaming">
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/lol-logo.png">
+                        <span class="card-title">League of Legends</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I still remember when my friend recommended this game to me four years ago I was like "Nah. This game is boring". And yet last season my peak elo was at Gold II.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="https://na.op.gg/summoner/userName=tinyjingle" target="_blank">Add me on LOL</a>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/cs-logo.png">
+                        <span class="card-title">Counter Strike</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I have been playing this game since I was 10. This is the most enjoyable game that I have ever tried. When I started playing rank games in Global Offense, I was placed into Master Guardian II. </p>
+                      </div>
+                      <div class="card-action">
+                        <a href="http://steamcommunity.com/id/eraclam" target="_blank">Add me on Steam</a>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/gaming.png">
+                        <span class="card-title">Other games</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I am a enthusiastic at gaming. I play different kinds of games. I am always looking for another gamer to play games together.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#contact-me">Hit me up</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel fade" id="experience">
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/zulily-logo.png">
+                        <span class="card-title">Software Engineering Intern</span>
+                      </div>
+                      <div class="card-content">
+                        <p>Zulily has grown significantly over the years. However, working there gives me the atmosphere of a start up. The work was stressful but the outcome made it always worth. It was an unique experience yet valuable to me.</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/genesys-logo.png">
+                        <span class="card-title">Frontend Developer</span>
+                      </div>
+                      <div class="card-content">
+                        <p>This was the best work term I had. I was there as a Frontend Web Developer developing an internal framework. I appreciated the fact that I have learned so MANY tools and technologies in a short term.</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/blackberry-logo.png">
+                        <span class="card-title">Automation Developer</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I spent two work terms working in Blackberry. One as a QA and the other one as an automation developer. After experiencing doing QA jobs, I realized how much I hated tedious, repeative jobs. And that motivated me to become a developer</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel fade" id="puppies">
+                    <h5>Photos of puppies</h5>
+                    <p>Did I say I like dogs? Because I really LOVE dogs. I don't have one right now but one day I will adopt one.</p>
+                    <div id="puppies-photos">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="gallery">
+          <div id="gallery-backdrop"></div>
+          <div id="gallery-cover" style="height: 800px">
+            <div class="slide-padding">
+              <div class="slide-header center-align">
+                <h2 class="font-slim">Gallery</h2>
+                <p>Explore while you can. Capture the beauty of this world.</p>
+              </div>
+              <div id="photos-container">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js"></script>
+      <script src="scripts/main.js"></script>
+    </body>
+</html>

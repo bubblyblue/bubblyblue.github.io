@@ -1,156 +1,482 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <title>Eric Lin | My Personal Website</title>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=807px, user-scalable=yes">
-    <meta name="description" content="Eric Lin personal website">
-    <meta name="keywords" content="eric,lin,ericlin,eric lin,zijing lin, zijing, waterloo, university of waterloo, lin zijing,software engineering,personal website">
-    <title>Eric Lin</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="http://faviconist.com/icons/0ddd6f65883f90adf3d051ece3553c13/favicon.ico" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<!--    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
-    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
-</head>
+        <style type="text/css">
+          .page-container {
+            opacity: 0;
+          }
+          .page-container.active {
+            opacity: 1;
+          }
+          .loading-screen {
+            position: fixed;
+            z-index: 99999;
+            background-color: #806443;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+          }
+          .loading-screen.hidden {
+            display: none;
+          }
+          #loader{
+            flex-direction:row;
+            -webkit-flex-direction:row;
+            -ms-flex-direction:row;
+            -mos-flex-direction:row;
+            -o-flex-direction:row;
+            justify-content:center;
+            -webkit-justify-content:center;
+            -ms-justify-content:center;
+            height:100%;
+            width:100%;
+            background-color:#806443;
+          }
+          .letter{
+              font-size:100px;
+              color:#222;
+              font-family:tahoma;
+          }
+          .box{
+              display: box;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+          }
+          .loaderCircle, .loaderInner, .loaderCore{
+               border-radius:50%;
+              -webkit-border-radius:50%;
+              -moz-border-radius:50%;
+              -ms-border-radius:50%;
+          }
+          .loader, .letter, .loaderCircle, .loaderInner, .loaderCore{
+              flex:none;
+              -webkit-flex:none;
+              -moz-flex:none;
+              -ms-flex:none;
+              -o-flex:none;
+          }
+          .letter, .loaderCircle{
+              align-self:center;
+              -webkit-align-self:center;
+              -moz-align-self:center;
+              -o-align-self:center;
+              -ms-align-self:center;
+          }
+          .loaderCircle{
+              align-items:center;
+              -ms-align-items:center;
+              justify-content:center;
+              -ms-justify-content:center;
+              height:100px;
+              width:100px;
+              background-color:#222;
+          }
+          .loaderInner{
+              align-self:center;
+              -ms-align-self:center;
+              justify-content:center;
+              -ms-justify-content:center;
+              height:50%;
+              width:50%;
+              background-color:#806443;
+              -webkit-animation-name:loaderAnimate;
+              -webkit-animation-duration:500ms;
+              -webkit-animation-direction:alternate;
+              -webkit-animation-timing-function:ease-in-out;
+              -webkit-animation-iteration-count:infinite;
+          }
+          .loaderCore{
+              align-self:center;
+              -ms-align-self:center;
+              height:25%;
+              width:25%;
+              background-color:#222;
+              -webkit-animation-name:coreAnimate;
+              -webkit-animation-duration:1s;
+              -webkit-animation-direction:alternate;
+              -webkit-animation-timing-function:ease-in-out;
+              -webkit-animation-iteration-count:infinite;
+          }
+          @-webkit-keyframes loaderAnimate{
+                  to{ height:90%; width:90%; }
+          }
+          @keyframes loaderAnimate{
+              to{ height:90%; width:90%; }
+          }
 
-<body>
-    <div class="menu navbar-example">
-        <!-- menu -->
-        <ul class="nav nav-tabs">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#introduction">Introduction</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-        </ul>
-     </div>
-    <div class="viewport-container" id="skrollr-body">
-        <div style="height:60px" id="home"></div>
-        <!-- real slides -->
-        <div class="slide-1">
-            <div class="name-container">
-                <h1>ERIC LIN</h1>
-                <h2>3B Software Engineering</h2>
-            </div>
-            <div class="scroll-container">
-                <div class="rectangle" id="first"></div>
-                <div class="rectangle"></div>
-                <div class="rectangle"></div>
-                <div class="triangle"></div>
-            </div>
+          @-webkit-keyframes coreAnimate{
+              to{ height:90%; width:90%; }
+          }
+          @keyframes coreAnimate{
+              to{ height:90%; width:90%; }
+          }
+          @media(max-width: 600px) {
+            .letter {
+              font-size: 50px
+            }
+            .loaderCircle {
+              width: 50px;
+              height: 50px;
+            }
+          }
+        </style>
+
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+        <link rel="stylesheet" href="libs/photoSwipe/photoswipe.css">
+        <link rel="stylesheet" href="libs/photoSwipe/default-skin/default-skin.css">
+        <link rel="stylesheet/less" type="text/css" href="styles/main.less"/>
+    </head>
+    <body>
+
+      <div class="loading-screen">
+        <div id = "loader" class = "box">
+            <span class = "letter">L</span>
+
+            <div class = "loaderCircle box">
+                <div class = "loaderInner box">
+                    <div class = "loaderCore box"></div>
+                </div></div>
+
+            <span class = "letter box">A</span>
+            <span class = "letter box">D</span>
+            <span class = "letter box">I</span>
+            <span class = "letter box">N</span>
+            <span class = "letter box">G</span>
         </div>
-        <div class="slide-2" id="introduction">
-            <div class="about-me"><i class="fa fa-user" style="margin-right: 30px;"></i>About Me</div>
-            <div>
-                <img src="/img/eric1.png" style="opacity: 0.7">
+      </div>
+
+      <div class="page-container">
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            <ul class="right hide-on-med-and-down" style="margin-right: 60px">
+              <li><a href="#home">HOME</a></li>
+              <li><a href="#profile">PROFILE</a></li>
+              <li><a href="#gallery">GALLERY</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href="#home">HOME</a></li>
+              <li><a href="#profile">PROFILE</a></li>
+              <li><a href="#gallery">GALLERY</a></li>
+              <li><a href="#contact">CONTACT</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="slide-1" id="home">
+          <div id="main-backdrop"></div>
+          <div id="main-cover">
+            <div class="content-container main-wrapper center-align">
+                <h1 class="font-slim">ERIC<span class="responsive-text"> ZIJING</span> LIN</h1>
+                <hr/>
+                <h4 class="font-stick">A software engineering student from University of Waterloo</h4>
             </div>
-            <div class="intro-container">
-                <div style="line-height: 500px; font-size: 15em; text-align: center;vertical-align:middle; width:5%">I</div>
-                <div class="detail-container">
-                    <div class="code-container">
-                        <div class="my-info-title">
-                            <div style="opacity:0" data--100-bottom="opacity:0" data--200-bottom="opacity:1">Code</div>
-                        </div>
-                        <div class="my-info-content">
-                            <div class="info-header"><h4>I Enjoy Programming</h4></div>
-                            <div class="info-para">I have been programming since grade 11. Throughout years of learning, I become familiar with Java, Javascript, Python, C++ and other languages. I got to use Bootstrap, QT, Angularjs and many other frameworks. There are still a lot to learn, and I will not stop.</div>
-                        </div>
-                    </div>
-                    <div class="play-container">
-                        <div class="my-info-title">
-                            <div style="opacity:0" data--25-bottom="opacity:0" data--100-bottom="opacity:1">Play</div>
-                        </div>
-                        <div class="my-info-content">
-                            <div class="info-header"><h4>Enthusiastic Gamer</h4></div>
-                            <div class="info-para">I love playing video games! I still remember the first game I ever played was Counter Strike 1.5. That started my "gaming life". Currentlly, I enjoy playing League of Legends both casually and competitively. Feel free to hit me up if you want to play together!</div>
-                        </div>
-                    </div>
-                    <div class="live-container">
-                        <div class="my-info-title">
-                            <div style="opacity:0" data--25-bottom="opacity:0" data--100-bottom="opacity:1">Live</div>
-                        </div>
-                        <div class="my-info-content">
-                            <div class="info-header"><h4>Explorer</h4></div>
-                            <div class="info-para">I have been exploring my whole life. I was borned in Japan. I was raised in China. And now I am studying in Canada. I enjoy travelling and going to places. Life is a long journey, it would be meaningful only if you fill it with great memories!</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- /slide 2 -->
-        <div class="image-container" id="experience">
-            <div class="experience-banner" data--50-bottom="background-position:0px 0px" data--400-bottom="background-position:0px -500px">
-            </div>
+          </div>
         </div>
-        <div class="slide-3">
-            <div class="all-experience-container">
-                <hr class="hr-width" align="center">
-                <div class="experience-container">
-                    <div class="experience-icon">
-                        <img src="/img/genesys.jpg">
-                    </div>
-                    <div class="experience-word">
-                        <div class="experience-header"><h3>Genesys</h3></div>
-                        <div class="experience-content">This was the best work term I had so far. I was there as a Frontend Web Developer developing an internal framework. I appreciated the fact that I have learned so MANY tools and technologies in a short term. I enjoyed being a web dev. However I wish I would have more works in backend development.</div>
-                    </div>
-                </div>
-                <hr class="hr-width">
-                <div class="experience-container-right experience-container">
-                    <div class="experience-icon">
-                        <img src="/img/blackberry.jpg">
-                    </div>
-                    <div class="experience-word">
-                        <div class="experience-header"><h3>BlackBerry</h3></div>
-                        <div class="experience-content">I spent two work terms working in Blackberry. One as a QA and the other one as an automation developer. After experiencing doing QA jobs, I realized how much I hated tedious, repeative jobs. However, I really enjoyed working as an automation developer since I actually learned how to Python. </div>
-                    </div>
-                </div>
-                <hr class="hr-width">
-                <div class="experience-container">
-                    <div class="experience-icon">
-                        <img src="/img/chetailang.jpg" style="height:75%">
-                    </div>
-                    <div class="experience-word">
-                        <div class="experience-header"><h3>Chetailang</h3></div>
-                        <div class="experience-content">This was my first co-op job. I was a software developer working in Shenzhen, China. I spent four months building a sales recording desktop application for the company. It wasn't going so well since I did not have a mentor and had to learn everything myself. But I learned a lot, that's for sure.</div>
-                    </div>
-                </div>
+
+        <div class="slide-2" id="profile">
+          <div class="slide-padding">
+            <div class="slide-header center-align">
+              <h2 class="font-slim">Profile</h2>
+              <p>"The measure of who we are is what we do with what we have." - Vince Lombardi</p>
             </div>
-        </div> <!-- /slide-3 -->
-        <div class="slide-4" id="contact">
-            <div class="fix-position">
-                <div class="contact-header">
-                    <img src="/img/eric.jpg" class="crop-image">
-                    <div class="contact-me-text">Eric Lin</div>
-                    <div class="contact-me-text">3B Software Engingeering</div>
-                    <div class="contact-me-text">Student from University of Waterloo</div>
+            <div class="row">
+              <div class="col s12 m5 profile">
+                <div class="center-align">
+                  <img class="crop-image" src="images/eric-profile-square.jpg"/>
                 </div>
-                <div class="my-icons">
-                    <div onclick="window.open('https://www.facebook.com/tinyjingle','mywindow');"><i class="fa fa-facebook"></i></div>
-                    <div onclick="window.open('http://www.linkedin.com/in/ericlin15','mywindow');"><i class="fa fa-linkedin"></i></div>
-                    <div onclick="window.open('https://github.com/tinyjing','mywindow');"><i class="fa fa-github"></i></div>
-                    <div onclick="window.open('mailto:ericlin815@gmail.com','mywindow');"><i class="fa fa-envelope-o"></i></div>
-                    <div><a href="resume" style="color:inherit"><i class="fa fa-file-o"></i></a></div>
+                <div>
+                  <p>
+                    Hi there! My name is <b>Eric Lin</b>! I am a software developer based in <a href="https://www.google.ca/maps/place/University+of+Waterloo/@43.4749848,-80.5523327,14z">Waterloo, Ontario</a>. I love gaming, coding and dogs. Well, mostly dogs.
+                  </p>
                 </div>
+                <div>
+                  <div class="side-tabs">
+                    <div class="side-tab"><a href="#about-me" class="active" tab-index="0">About Me</a></div>
+                    <div class="side-tab"><a href="#gaming" tab-index="1">Gaming Proficiency</a></div>
+                    <div class="side-tab"><a href="#experience" tab-index="2">Past Experience</a></div>
+                    <div class="side-tab"><a href="#puppies" tab-index="3">Puppies</a></div>
+                    <div class="indicator-cover top"></div>
+                    <div class="vertical-indicator"></div>
+                    <div class="indicator-cover bottom"></div>
+                  </div>
+                </div>
+                <div class="material-tabs">
+                  <ul class="tabs z-depth-1">
+                      <li class="tab"><a href="#about-me" class="active" tab-index="0">About<span class="responsive-text"> Me</span></a></li>
+                      <li class="tab"><a href="#gaming" tab-index="1">Gaming<span class="responsive-text"> Proficiency</span></a></li>
+                      <li class="tab"><a href="#experience" tab-index="2"><span class="responsive-text">Past </span>Experience</a></li>
+                      <li class="tab"><a href="#puppies" tab-index="3">Puppies</a></li>
+                    </ul>
+                </div>
+              </div>
+              <div class="col s12 m7">
+                <div class="tabs-contents">
+                  <div class="panel fade active in" id="about-me">
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/eric-progress.png">
+                        <span class="card-title">Who am I</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I was born in Japan, raised in China, studying in Canada and have done internship in the US. Yes, I have been everywhere. And that's probably why I love going to places. Life is a long journey, you can't ever stop exploring.</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/eric-back.png">
+                        <span class="card-title">What do I usually do</span>
+                      </div>
+                      <div class="card-content">
+                        <p>Hanging out with friends by playing board games or video games. So I game a lot and consider myself a nerd. Sometimes I would also spark an idea and start coding for it.</p>
+                      </div>
+                    </div>
+                    <div class="card" style="margin-bottom: 10px;">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/coding.png">
+                        <span class="card-title">How did I start coding</span>
+                      </div>
+                      <div class="card-content">
+                        <p>When I was a kid, I was a script kiddy and obsessed with "hacking". That was what got me started in programming. I tried to make games, desktop and web applications. Throughout years of learning, I have learned tons of programming concepts, languages and technologies. But I know there is still a long way to go, and I will never stop moving forward.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel fade" id="gaming">
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/lol-logo.png">
+                        <span class="card-title">League of Legends</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I still remember when my friend recommended this game to me four years ago I was like "Nah. This game is boring". And yet last season my peak elo was at Gold II.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="https://na.op.gg/summoner/userName=tinyjingle" target="_blank">Add me on LOL</a>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/cs-logo.png">
+                        <span class="card-title">Counter Strike</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I have been playing this game since I was 10. This is the most enjoyable game that I have ever tried. When I started playing rank games in Global Offense, I was placed into Master Guardian II. </p>
+                      </div>
+                      <div class="card-action">
+                        <a href="http://steamcommunity.com/id/eraclam" target="_blank">Add me on Steam</a>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/gaming.png">
+                        <span class="card-title">Other games</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I am a gaming enthusist. I love playing a lot of different types of games and I am always looking for new games to play with people.</p>
+                      </div>
+                      <div class="card-action">
+                        <a href="#contact-me">Hit me up</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel fade" id="experience">
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/zulily-logo.png">
+                        <span class="card-title">Software Engineering Intern</span>
+                      </div>
+                      <div class="card-content">
+                        <p>Zulily has grown significantly over the years. However, working there gives me the atmosphere of a start up. The work was stressful but the outcome made it always worth. It was an unique experience yet valuable to me.</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/genesys-logo.png">
+                        <span class="card-title">Frontend Developer</span>
+                      </div>
+                      <div class="card-content">
+                        <p>This was the best work term I had. I was there as a Frontend Web Developer developing an internal framework. I appreciated the fact that I have learned so MANY tools and technologies in a short term.</p>
+                      </div>
+                    </div>
+                    <div class="card">
+                      <div class="card-image">
+                        <img class="img-blur" src="images/blackberry-logo.png">
+                        <span class="card-title">Automation Developer</span>
+                      </div>
+                      <div class="card-content">
+                        <p>I spent two work terms working in Blackberry. One as a QA and the other one as an automation developer. After experiencing doing QA jobs, I realized how much I hated tedious, repeative jobs. And that motivated me to become a developer</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel fade" id="puppies">
+                    <h5>Photos of puppies</h5>
+                    <p>Did I say I like dogs? Because I really LOVE dogs. I don't have one right now but one day I will adopt one.</p>
+                    <div id="puppies-photos">
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
 
-    <!-- Libraries -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        <div id="gallery">
+          <div id="gallery-backdrop"></div>
+          <div id="gallery-cover">
+            <div class="slide-padding center-align">
+              <div class="slide-header">
+                <h2 class="font-slim">Gallery</h2>
+                <p>Explore while you can. Capture the beauty of this world.</p>
+              </div>
+              <div id="gallery-photos"></div>
+            </div>
+          </div>
+        </div>
 
-      ga('create', 'UA-51700014-1', 'ericlin15.com');
-      ga('send', 'pageview');
+        <div id="contact">
+          <div class="slide-padding">
+            <div class="slide-header center-align">
+              <h2 class="font-slim">Contact Me</h2>
+              <p class="center-align">What's on your mind? Hiring? playing games? Hopefully not spamming.</p>
+            </div>
+            <div class="row">
+              <div class="col s12 m6 l8">
+                <form>
+                  <div class="row">
+                    <div class="col s12"><h5>Get in touch</h5></div>
+                    <div class="input-field col s12">
+                      <input id="first_name" type="text" class="validate">
+                      <label for="first_name">Your Name</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <input id="first_name" type="text" class="validate">
+                      <label for="first_name">Your Email Address</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <textarea id="textarea1" class="materialize-textarea"></textarea>
+                      <label for="textarea1">Comments</label>
+                    </div>
+                    <div class="col s12">
+                      <button class="btn waves-effect waves-light" id="message-submit" type="submit">Submit
+                        <i class="mdi-content-send right"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col s12 m6 l4">
+                <div style="padding: 0 0.75rem">
+                  <h5>Connect with me</h5>
+                  <div class="social-container facebook">
+                    <a href="https://www.facebook.com/ericlin815" target="_blank">
+                      <i class="fa fa-facebook-square"></i>
+                      <span>ericlin815</span>
+                    </a>
+                  </div>
+                  <div class="social-container email">
+                    <a href="mailto:me@erlin.ca?Subject=Just%20Checked%20Out%20Your%20Site">
+                      <i class="fa fa-envelope-o"></i>
+                      <span>me@erlin.ca</span>
+                    </a>
+                  </div>
+                  <div class="social-container twitter">
+                    <a href="https://twitter.com/Eracnin" target="_blank">
+                      <i class="fa fa-twitter-square"></i>
+                      <span>@Eracnin</span>
+                    </a>
+                  </div>
+                  <div class="social-container github">
+                    <a href="https://github.com/tinyjing" target="_blank">
+                      <i class="fa fa-github"></i>
+                      <span>tinyjing</span>
+                    </a>
+                  </div>
+                  <div class="social-container instagram">
+                    <a href="https://instagram.com/ericlin15" target="_blank">
+                      <i class="fa fa-instagram"></i>
+                      <span>ericlin15</span>
+                    </a>
+                  </div>
+                  <div class="social-container linkedin">
+                    <a href="https://ca.linkedin.com/in/ericlin15" target="_blank">
+                    <i class="fa fa-linkedin-square"></i>
+                      <span>ericlin15</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
-    <script type="text/javascript" src="lib/skrollr.min.js"></script>
-    <script type="text/javascript" src="script/app.js"></script>
-    <script type="text/javascript" src="script/smooth-scrolling.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-</body>
+        </div>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.0/less.min.js"></script>
+      <script src="libs/hoverDir/isotope.js"></script>
+      <script src="libs/hoverDir/hoverdir.js"></script>
+      <script src="libs/photoSwipe/photoswipe.min.js"></script>
+      <script src="libs/photoSwipe/photoswipe-ui-default.min.js"></script>
+
+      <script src="scripts/main.js"></script>
+
+      <!-- photo swipe -->
+      <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+        <div class="pswp__bg"></div>
+
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                          <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+
+            </div>
+
+        </div>
+      </div>
+    </body>
+</html>

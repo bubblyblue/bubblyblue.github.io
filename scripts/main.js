@@ -522,3 +522,40 @@ var fadeInGallery = function() {
   });
 
 })();
+
+(function emailHandler() {
+
+  $('#comments-submit').click(function(event) {
+    event.preventDefault();
+
+    $('.response.danger').hide();
+    $('.response.success').hide();
+
+    var name = document.getElementById('name').value,
+      email = document.getElementById('email-address').value,
+      comments = document.getElementById('comments').value
+
+    var postBody = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email-address').value,
+      comments: document.getElementById('comments').value
+    };
+
+    if (!name || !email || !comments) {
+      $('.response.danger').show();
+    } else {
+      $.ajax({
+        url: 'http://erlin.herokuapp.com/comments',
+        type: 'POST',
+        data: JSON.stringify(postBody),
+        contentType: 'application/json; charset=utf-8',
+        dataType: "json",
+        success: function() {
+          $('.response.success').show();;
+        }
+      });
+    }
+
+  });
+
+})();

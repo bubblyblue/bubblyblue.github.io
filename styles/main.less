@@ -19,6 +19,31 @@ nav {
   }
 }
 
+button:focus {
+  background-color: @color-main;
+}
+
+.response {
+  position: relative;
+  top: 2px;
+  display: none;
+  i {
+    font-size: 30px;
+    vertical-align: middle;
+  }
+  span {
+    position: relative;
+    left: 5px;
+    top: 2px;
+  }
+  &.success i {
+    color: #5cb85c;
+  }
+  &.danger i {
+    color: #d9534f;
+  }
+}
+
 .slide-header {
   margin-bottom: 40px;
   h2 {

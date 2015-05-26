@@ -545,7 +545,7 @@ var fadeInGallery = function() {
       $('.response.danger').show();
     } else {
       $.ajax({
-        url: 'http://erlin.herokuapp.com/comments',
+        url: 'http://agile-mesa-7360.herokuapp.com/comments',
         type: 'POST',
         data: JSON.stringify(postBody),
         contentType: 'application/json; charset=utf-8',

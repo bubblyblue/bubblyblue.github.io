@@ -341,9 +341,9 @@ var viewPortHeight = $(window).height(),
   var setNavPosition = function() {
     $(document).scroll(function() {
       var scrollAmount = $(window).scrollTop();
-      if (scrollAmount >= viewPortHeight/3) {
+      if (scrollAmount >= viewPortHeight/3 && !$('nav').hasClass('hidden')) {
         $('nav').addClass('hidden');
-      } else {
+      } else if (scrollAmount < viewPortHeight/3 && $('nav').hasClass('hidden')) {
         $('nav').removeClass('hidden');
       }
     });
@@ -467,7 +467,7 @@ var viewPortHeight = $(window).height(),
 var fadeInCards = function() {
   var delay = 0;
   $('#about-me .card').each(function() {
-    $(this).delay(delay).animate({left: 0});
+    $(this).delay(delay).animate({left: 0}, 550);
     delay += 150;
   });
 };
@@ -475,7 +475,7 @@ var fadeInCards = function() {
 var fadeInProfile = function() {
   $('.profile').eq(0).animate({
     opacity: 1
-  });
+  }, 1000);
 };
 
 var fadeInGallery = function() {
